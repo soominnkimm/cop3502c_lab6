@@ -17,12 +17,23 @@ def encoder(password):
     encoded = int(''.join(l))
     return encoded
 
-def decoder(password)
-    l = []
-    for i in password:
-        l.append(i-3)
-    encoded = int(''.join(l))
-    return encoded
+
+"""
+Written by: Case Zumbrum
+
+decoder decodes a password by decreasing all integers in it by 3
+
+Input:
+password (String): Encoded password, must be all integers and should be 8 characters long
+
+Output:
+decoded_password (String): Password decoded by reducing all integers by 3
+"""
+def decoder(password):
+    decoded_password = ''
+    for char in password:
+        decoded_password += str(int(char) - 3)
+    return decoded_password
 
 if __name__== '__main__':
     main()
