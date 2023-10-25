@@ -1,3 +1,4 @@
+#soomin kim
 def main():
     print('1. encoder\n 2.decoder \n3. exit')
     password_input = input('enter password')
