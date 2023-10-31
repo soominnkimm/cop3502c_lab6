@@ -1,29 +1,28 @@
 #soomin kim
-def main():
-    print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit')
-    menu_input = input('Please enter an option:')
-    password_input = input('Please enter your password to encode:')
-    encoded = ''
-    if menu_input == '1':
-        encoded += encode(password_input)
-        print('Your password has been encoded and stored!')
-    elif menu_input == '2':
-        print(f"The encoded password is {encoded}, and the original password is {decode(encoded)}.")
-    else:
-        exit()
+def main(): #written by soomin kim
+    while True:
+        print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit')
+        menu_input = input('Please enter an option:')
+        if menu_input == '1':
+            password_input = input('Please enter your password to encode:')
+            encoded = encode(password_input)
+            print('Your password has been encoded and stored!')
+        elif menu_input == '2':
+            decoded = decode(encoded)
+            print(f'The encoded password is {encoded}, and the original password is {decoded}.')
+        else:
+            exit()
 
-def encode(password):
+def encode(password): #written by soomin kim
     l = []
     for i in password:
-        i += 3
-        if i >= 10:
-            i = int(str(i)[-1])
-            l.append(i)
+        addition = str(int(i) + 3)
+        if int(addition) >= 10:
+            addition = str(i)[-1]
+            l.append(addition)
         else:
-            l.append(i)
-
-    encoded = int(''.join(l))
-    return encoded
+            l.append(addition)
+    return ''.join(l)
 
 '''
 Written by: Case Zumbrum
